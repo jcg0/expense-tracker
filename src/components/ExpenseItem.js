@@ -1,14 +1,13 @@
-const ExpenseItem = (props) => {
-  // const expenseDate = new Date().toLocaleDateString();
-  // const expenseTitle = "Rent";
-  // const expenseAmount = 1050.0;
+import ExpenseDate from "./ExpenseDate";
+import "./ExpenseItem.css";
 
+const ExpenseItem = (props) => {
   return (
-    <div>
-      <div>{props.date}</div>
-      <div>
+    <div className="expense-item">
+      <ExpenseDate date={props.date} />
+      <div className="expense-item-description">
         <h2>{props.title}</h2>
-        <div>${props.amount}</div>
+        <div className="expense-item-price">${props.amount}</div>
       </div>
     </div>
   );
