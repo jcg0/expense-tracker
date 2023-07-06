@@ -1,4 +1,5 @@
 import { React, useState } from "react";
+import "./ExpenseForm.css";
 
 const ExpenseForm = (props) => {
   const [title, setNewTitle] = useState("");
@@ -37,12 +38,12 @@ const ExpenseForm = (props) => {
 
   return (
     <form action="" onSubmit={handleSubmit}>
-      <div>
-        <div>
+      <div className="new-expense__controls">
+        <div className="new-expense__control">
           <label htmlFor="">Title</label>
           <input type="text" value={title} onChange={titleChangeHandler} />
         </div>
-        <div>
+        <div className="new-expense__control">
           <label htmlFor="">Amount</label>
           <input
             type="number"
@@ -52,7 +53,7 @@ const ExpenseForm = (props) => {
             onChange={amountChangeHandler}
           />
         </div>
-        <div>
+        <div className="new-expense__control">
           <label htmlFor="">Date</label>
           <input
             type="date"
@@ -63,7 +64,10 @@ const ExpenseForm = (props) => {
           />
         </div>
       </div>
-      <button type="submit">Add Expense</button>
+      <div className="new-expense__actions">
+        <button onClick={props.cancel}>Cancel</button>
+        <button type="submit">Add Expense</button>
+      </div>
     </form>
   );
 };
